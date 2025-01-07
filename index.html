@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMOS22 Challenge</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        /* 页面特定样式 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr 1fr;
+            gap: 40px;
+            justify-content: start;
+        }
+
+        /* News section */
+        .news-section {
+            grid-column: 1 / -1;
+        }
+
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .news-list li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #00bfa5;
+        }
+
+        .news-list a {
+            color: #00bfa5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .news-list a:hover {
+            color: #00897b;
+        }
+
+        /* Column styles */
+        .column {
+            font-size: 0.85em;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .column:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .column h2 {
+            font-size: 1.8em;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        /* Features list */
+        .features-list {
+            list-style: none;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .checkmark {
+            color: #7FBFB0;
+        }
+
+        /* Collaborators list */
+        .collaborators-list {
+            list-style: none;
+            padding: 0;
+            display: block;
+        }
+
+        .collaborators-list li {
+            padding: 6px 0;
+            transition: all 0.2s ease;
+            line-height: 1.3;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+
+        .collaborators-list li:hover {
+            color: var(--text-primary);
+            transform: translateX(4px);
+        }
+
+        /* Sponsors list */
+        .sponsors-list {
+            display: block;
+        }
+
+        .sponsor-logo {
+            max-width: 180px;
+            width: 100%;
+            height: auto;
+            margin: 1px 0;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+            opacity: 0.85;
+        }
+
+        .sponsor-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-header">
+        <div class="header-container">
+            <!-- 左侧 logo -->
+            <div class="logo-section">
+                <img src="logo.png" alt="COCO" class="logo">
+            </div>
+            
+            <!-- 右侧内容 -->
+            <div class="content-section">
+                <nav class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="people.html">People</a>
+                    <div class="nav-item">
+                        <a href="dataset.html">Dataset</a>
+                        <div class="dropdown-content">
+                            <a href="dataset.html#overview">Overview</a>
+                            <a href="dataset.html#download">Download</a>
+                            <a href="dataset.html#evaluation">Evaluation</a>
+                            <a href="dataset.html#rules">Rules</a>
+                            <a href="dataset.html#instructions">Instructions</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="tasks.html">Tasks</a>
+                        <div class="dropdown-content">
+                            <a href="tasks.html#description">Cell Segmentation</a>
+                            <a href="tasks.html#description">Cell Quantification</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="evaluate.html">Evaluate</a>
+                        <div class="dropdown-content">
+                            <a href="evaluate.html#leaderboards">Leaderboards</a>
+                            <a href="evaluate.html#statistics">Statistics</a>
+                            <a href="evaluate.html#submit">Submit Results</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <!-- News section -->
+        <section class="news-section">
+            <h1 class="section-title">News</h1>
+            <ul class="news-list">
+                <li>Registration opens: April 10th (12:00 AM GMT), 2025</li>
+                <li>Release of training data: May 10th (12:00 AM GMT), 2025</li>
+                <li>Release of validation data: July 10th (12:00 AM GMT), 2025</li>
+                <li>Docker and short paper submission opens: Aug. 10th (12:00 AM GMT), 2025</li>
+                <li>Submission deadline: Sept. 10th (12:00 AM GMT), 2025</li>
+                <li>Announcement of final results: Oct. 8th, 2025</li>
+            </ul>
+        </section>
+
+        <!-- What is OmniIHC2025 column -->
+        <div class="column">
+            <h2>What is OmniIHC?</h2>
+            <p>The OmniIHC2025 Challenge presents a comprehensive dataset for tumor profiling across multiple immunohistochemistry stained images.</p>
+            <p>Challenge Features:</p>
+            <ul class="features-list">
+                <li><span class="checkmark">✓</span> Over 1 million cell annotations</li>
+                <li><span class="checkmark">✓</span> Data from 350+ patients</li>
+                <li><span class="checkmark">✓</span> 19 diverse IHC staining types</li>
+                <li><span class="checkmark">✓</span> Collected from 5 centers</li>
+                <li><span class="checkmark">✓</span> High-quality cell-level annotations</li>
+                <li><span class="checkmark">✓</span> Multiple biomarkers analysis</li>
+                <li><span class="checkmark">✓</span> Cell segmentation task</li>
+                <li><span class="checkmark">✓</span> Cell quantification task</li>
+            </ul>
+        </div>
+
+        <!-- Collaborators column -->
+        <div class="column">
+            <h2>Organizers</h2>
+            <ul class="collaborators-list">
+                <li>Xiangde Luo - XJTU, Stanford</li>
+                <li>Wentao Li - XJTU</li>
+                <li>Yuanfeng Ji - Stanford</li>
+                <li>Xiyue Wang - Stanford</li>
+                <li>Sen Yang - Stanford</li>
+                <li>Mengxin Tian - Fudan</li>
+                <li>Cunbao Xu - QFHFMU</li>
+                <li>Yifeng Chen - QFHFMU</li>
+                <li>Long Jin - SCMC</li>
+                <li>Shaoting Zhang - Shanghai AI Lab</li>
+                <li>Zhiqiang Tian - XJTU</li>
+                <li>Dingwen Zhang - HCNSC</li>
+                <li>Zhongyu Li - XJTU</li>
+            </ul>
+        </div>
+
+        <!-- Sponsors column -->
+        <div class="column">
+            <h2>Sponsors</h2>
+            <div class="sponsors-list">
+                <img src="https://via.placeholder.com/200x80/eee/999?text=CVDF" class="sponsor-logo">
+                <img src="https://via.placeholder.com/200x60/eee/999?text=Microsoft" class="sponsor-logo">
+                <img src="https://via.placeholder.com/200x70/eee/999?text=Facebook" class="sponsor-logo">
+                <img src="https://via.placeholder.com/200x65/eee/999?text=Mighty+AI" class="sponsor-logo">
+            </div>
+        </div>
+    </main>
+</body>
+</html> 

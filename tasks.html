@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - OmniIHC2025</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .task-section {
+            margin-bottom: 60px;
+        }
+
+        .task-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .task-overview {
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .evaluation-metrics {
+            margin-top: 20px;
+        }
+
+        .metric-item {
+            margin-bottom: 20px;
+        }
+
+        .metric-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .metric-description {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-header">
+        <div class="header-container">
+            <!-- 左侧 logo -->
+            <div class="logo-section">
+                <img src="logo.png" alt="AMOS" class="logo">
+            </div>
+            
+            <!-- 右侧内容 -->
+            <div class="content-section">
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="people.html">People</a>
+                    <div class="nav-item">
+                        <a href="dataset.html">Dataset</a>
+                        <div class="dropdown-content">
+                            <a href="dataset.html#overview">Overview</a>
+                            <a href="dataset.html#download">Download</a>
+                            <a href="dataset.html#evaluation">Evaluation</a>
+                            <a href="dataset.html#rules">Rules</a>
+                            <a href="dataset.html#instructions">Instructions</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="tasks.html" class="active">Tasks</a>
+                        <div class="dropdown-content">
+                            <a href="tasks.html#task1">Task1 Cell Segmentation</a>
+                            <a href="tasks.html#task2">Task2 Cell Quantification</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="evaluate.html">Evaluate</a>
+                        <div class="dropdown-content">
+                            <a href="evaluate.html#leaderboards">Leaderboards</a>
+                            <a href="evaluate.html#statistics">Statistics</a>
+                            <a href="evaluate.html#submit">Submit Results</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <!-- Overview Section -->
+        <section id="overview" class="task-section">
+            <h1 class="section-title">Challenge Tasks</h1>
+            <div class="task-content">
+                <p>The OmniIHC2025 Challenge focuses on advancing comprehensive tumor profiling through accurate cell segmentation and quantification in immunohistochemistry (IHC) images. The challenge aims to develop robust computational methods for analyzing multi-stained tissue images across different centers and cancer types.</p>
+            </div>
+        </section>
+
+        <!-- Task 1 Section -->
+        <section id="task1" class="task-section">
+            <h2 class="section-title">Task 1: Cell Segmentation</h2>
+            <div class="task-content">
+                <div class="evaluation-metrics">
+                    <div class="metric-item">
+                        <div class="metric-name">Task Description</div>
+                        <div class="metric-description">
+                            Accurately delineate individual cells within multi-stained tissue images, focusing on precise boundary detection and cell instance separation. This task requires participants to develop algorithms that can effectively identify and segment cells across various IHC staining types.
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-name">Evaluation Metrics</div>
+                        <div class="metric-description">
+                            <ul>
+                                <li><strong>Aggregated Jaccard Index (AJI):</strong> Evaluates the overlap between segmentation results and ground truth annotations at the connected component level.</li>
+                                <li><strong>Panoptic Quality (PQ):</strong> Measures the classification accuracy of pixel points, reflecting the correctness of instance segmentation.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Task 2 Section -->
+        <section id="task2" class="task-section">
+            <h2 class="section-title">Task 2: Cell Quantification</h2>
+            <div class="task-content">
+                <div class="evaluation-metrics">
+                    <div class="metric-item">
+                        <div class="metric-name">Task Description</div>
+                        <div class="metric-description">
+                            Count cells and measure expression levels of specific biomarkers within the segmented cells, including calculation of Tumor Proportion Score (TPS). This quantification is crucial for understanding tumor heterogeneity and the tumor microenvironment.
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-name">Evaluation Metrics</div>
+                        <div class="metric-description">
+                            <ul>
+                                <li><strong>Mean Absolute Error (MAE):</strong> Computes the absolute error between predicted and true cell counts, as well as the Tumor Proportion Score (TPS).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 

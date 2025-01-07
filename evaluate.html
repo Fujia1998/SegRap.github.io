@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate - OmniIHC2025</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .evaluate-section {
+            margin-bottom: 60px;
+        }
+
+        .evaluate-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .leaderboard-table th,
+        .leaderboard-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .leaderboard-table th {
+            font-weight: 500;
+            color: var(--text-primary);
+            background: #f8f9fa;
+        }
+
+        .leaderboard-table td {
+            color: var(--text-secondary);
+        }
+
+        .rank {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .team-name {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .metric-value {
+            font-family: monospace;
+        }
+
+        .evaluation-metrics {
+            margin-top: 20px;
+        }
+
+        .metric-item {
+            margin-bottom: 20px;
+        }
+
+        .metric-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .metric-description {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.5;
+            width: 100%;
+        }
+
+        .metric-description ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .metric-description li {
+            margin-bottom: 8px;
+        }
+
+        .submit-section {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .submit-button:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="site-header">
+        <div class="header-container">
+            <!-- 左侧 logo -->
+            <div class="logo-section">
+                <img src="logo.png" alt="AMOS" class="logo">
+            </div>
+            
+            <!-- 右侧内容 -->
+            <div class="content-section">
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="people.html">People</a>
+                    <div class="nav-item">
+                        <a href="dataset.html">Dataset</a>
+                        <div class="dropdown-content">
+                            <a href="dataset.html#overview">Overview</a>
+                            <a href="dataset.html#download">Download</a>
+                            <a href="dataset.html#evaluation">Evaluation</a>
+                            <a href="dataset.html#rules">Rules</a>
+                            <a href="dataset.html#instructions">Instructions</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="tasks.html">Tasks</a>
+                        <div class="dropdown-content">
+                            <a href="tasks.html#task1">Task1 Cell Segmentation</a>
+                            <a href="tasks.html#task2">Task2 Cell Quantification</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="evaluate.html" class="active">Evaluate</a>
+                        <div class="dropdown-content">
+                            <a href="evaluate.html#leaderboards">Leaderboards</a>
+                            <a href="evaluate.html#statistics">Statistics</a>
+                            <a href="evaluate.html#submit">Submit Results</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <!-- Leaderboards Section -->
+        <section id="leaderboards" class="evaluate-section">
+            <h1 class="section-title">Leaderboards</h1>
+            
+            <!-- Task 1 Leaderboard -->
+            <div class="evaluate-content">
+                <div class="metric-name">Task 1: Cell Segmentation</div>
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team</th>
+                            <th>AJI</th>
+                            <th>PQ</th>
+                            <th>Average Rank</th>
+                            <th>Last Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rank">1</td>
+                            <td class="team-name">Coming Soon</td>
+                            <td class="metric-value">-</td>
+                            <td class="metric-value">-</td>
+                            <td class="metric-value">-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Task 2 Leaderboard -->
+            <div class="evaluate-content">
+                <div class="metric-name">Task 2: Cell Quantification</div>
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team</th>
+                            <th>MAE</th>
+                            <th>TPS-MAE</th>
+                            <th>Average Rank</th>
+                            <th>Last Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rank">1</td>
+                            <td class="team-name">Coming Soon</td>
+                            <td class="metric-value">-</td>
+                            <td class="metric-value">-</td>
+                            <td class="metric-value">-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 

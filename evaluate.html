@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluate - OmniIHC2025</title>
+    <title>SegRap2025 Challenge</title>
     <link rel="stylesheet" href="shared.css">
     <style>
         .evaluate-section {
@@ -13,8 +14,8 @@
         .evaluate-content {
             background: white;
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 10px;
+            margin-bottom: 0px;
         }
 
         .leaderboard-table {
@@ -65,7 +66,9 @@
         .metric-name {
             font-weight: 500;
             color: var(--text-primary);
+            font-size: 20px;
             margin-bottom: 8px;
+            margin-top: 0px;
         }
 
         .metric-description {
@@ -106,44 +109,21 @@
         }
     </style>
 </head>
+
 <body>
     <div class="site-header">
+        <div class="header-image" style="text-align: center;">
+            <img src="logo_web.png" alt="SegRap Logo" style="width: 800px; height: auto;">
+        </div>
         <div class="header-container">
-            <!-- 左侧 logo -->
-            <div class="logo-section">
-                <img src="logo.png" alt="AMOS" class="logo">
-            </div>
-            
-            <!-- 右侧内容 -->
             <div class="content-section">
                 <nav class="nav-links">
                     <a href="index.html">Home</a>
-                    <a href="people.html">People</a>
-                    <div class="nav-item">
-                        <a href="dataset.html">Dataset</a>
-                        <div class="dropdown-content">
-                            <a href="dataset.html#overview">Overview</a>
-                            <a href="dataset.html#download">Download</a>
-                            <a href="dataset.html#evaluation">Evaluation</a>
-                            <a href="dataset.html#rules">Rules</a>
-                            <a href="dataset.html#instructions">Instructions</a>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <a href="tasks.html">Tasks</a>
-                        <div class="dropdown-content">
-                            <a href="tasks.html#task1">Cell Segmentation</a>
-                            <a href="tasks.html#task2">Cell Quantification</a>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <a href="evaluate.html" class="active">Evaluate</a>
-                        <div class="dropdown-content">
-                            <a href="evaluate.html#leaderboards">Leaderboards</a>
-                            <a href="evaluate.html#statistics">Statistics</a>
-                            <a href="evaluate.html#submit">Submit Results</a>
-                        </div>
-                    </div>
+                    <a href="tasks.html">Tasks</a>
+                    <a href="evaluate.html" class="active">Evaluate</a>
+                    <a href="previous.html">Previous</a>
+                    <a href="organizing.html">Organizing</a>
+                    <a href="contact.html">Contact</a>
                 </nav>
             </div>
         </div>
@@ -152,58 +132,58 @@
     <main class="main-content">
         <!-- Leaderboards Section -->
         <section id="leaderboards" class="evaluate-section">
-            <h1 class="section-title">Leaderboards</h1>
-            
+            <h1 class="section-title">Evaluate and Ranking</h1>
+
             <!-- Segmentation Leaderboard -->
             <div class="evaluate-content">
-                <div class="metric-name">Cell Segmentation</div>
-                <table class="leaderboard-table">
-                    <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>Team</th>
-                            <th>Average PQ Metric</th>
-                            <th>Average PQ Rank</th>
-                            <th>Last Updated</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="rank">1</td>
-                            <td class="team-name">Coming Soon</td>
-                            <td class="metric-value">-</td>
-                            <td class="metric-value">-</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="metric-name">Two-phase Challenge Submission</div>
+                <p class="metric-description">
+                    For the first phase (validation phase), participants can submit their segmentation results of the
+                    validation dataset to
+                    the organization team once per week. A maximum of 5 submissions are allowed during the validation
+                    stage to ensure fair
+                    evaluation and prevent overfitting.</p>
+                <br>
+                <p class="metric-description">
+                    For the second phase (test phase), participants must prepare and submit their Docker containers
+                    along with a short paper
+                    outlining their method.
+                </p>
             </div>
 
-            <!-- Quantification Leaderboard -->
+            <!-- Evaluation metrics -->
             <div class="evaluate-content">
-                <div class="metric-name">Cell Quantification</div>
-                <table class="leaderboard-table">
-                    <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>Team</th>
-                            <th>Average MAE Metric</th>
-                            <th>Average MAE Rank</th>
-                            <th>Last Updated</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="rank">1</td>
-                            <td class="team-name">Coming Soon</td>
-                            <td class="metric-value">-</td>
-                            <td class="metric-value">-</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="metric-name">Evaluation metrics</div>
+                <p class="metric-description">
+                    Two classical medical segmentation metrics: <strong>Dice Similarity Coefficient (DSC)</strong>, and
+                    <strong></strong>normalized
+                    surface dice (NSD)</strong>, will be used to assess different aspects of the performance of the
+                    segmentation methods.
+                </p>
+            </div>
+
+            <!-- Ranking -->
+            <div class="evaluate-content">
+                <div class="metric-name">Ranking</div>
+                <p class="metric-description">
+                    Firstly, for each organ, we calculate the average DSC and NSD across all the patients respectively.
+                    Secondly, each
+                    participant will be ranked based on the organ-level DSC and NSD; each participant will have 2
+                    &times; 2 or 6 &times; 2 rankings.
+                    Finally, average all these rankings and then normalize them by the number of teams. At the same
+                    time, we will take the
+                    statistical ranking. (Allow equal teams if there is no significant difference).</p>
+                <br>
+                <p class="metric-description">
+                    In addition, if the submissions have some missing results on test cases, the corresponding organ's
+                    DSC and NSD will be
+                    set to 0 and 0 for ranking. For example, a test case missed an organ and the ranking value of this
+                    organ in average DSC
+                    and NSD will degrade.
+                </p>
             </div>
         </section>
     </main>
 </body>
-</html> 
+
+</html>

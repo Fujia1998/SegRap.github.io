@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OmniIHC2025 Challenge</title>
+    <title>SegRap2025 Challenge</title>
     <link rel="stylesheet" href="shared.css">
     <style>
         /* 页面特定样式 */
@@ -20,6 +21,7 @@
         }
 
         .news-list {
+            color: #0f1212;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -28,10 +30,11 @@
         .news-list li {
             position: relative;
             padding-left: 25px;
+            margin-top: 20px;
             margin-bottom: 20px;
             line-height: 1.5;
-            color: #666;
-            font-weight: 300;
+            color: #064b43;
+            font-weight: 500;
         }
 
         .news-list li::before {
@@ -39,10 +42,11 @@
             position: absolute;
             left: 10px;
             color: #00bfa5;
+            font-weight: 300;
         }
 
         .news-list a {
-            color: #00bfa5;
+            color: #064b43;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s ease;
@@ -120,26 +124,6 @@
             transform: translateX(4px);
         }
 
-        /* Sponsors list */
-        .sponsors-list {
-            display: block;
-        }
-
-        .sponsor-logo {
-            max-width: 180px;
-            width: 100%;
-            height: auto;
-            margin: 1px 0;
-            transition: all 0.3s ease;
-            filter: grayscale(100%);
-            opacity: 0.85;
-        }
-
-        .sponsor-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.02);
-        }
 
         @media (max-width: 768px) {
             .main-content {
@@ -148,44 +132,21 @@
         }
     </style>
 </head>
+
 <body>
     <div class="site-header">
+        <div class="header-image" style="text-align: center;">
+            <img src="logo_web.png" alt="SegRap Logo" style="width: 800px; height: auto;">
+        </div>
         <div class="header-container">
-            <!-- 左侧 logo -->
-            <div class="logo-section">
-                <img src="logo.png" alt="COCO" class="logo">
-            </div>
-            
-            <!-- 右侧内容 -->
             <div class="content-section">
                 <nav class="nav-links">
                     <a href="index.html" class="active">Home</a>
-                    <a href="people.html">People</a>
-                    <div class="nav-item">
-                        <a href="dataset.html">Dataset</a>
-                        <div class="dropdown-content">
-                            <a href="dataset.html#overview">Overview</a>
-                            <a href="dataset.html#download">Download</a>
-                            <a href="dataset.html#evaluation">Evaluation</a>
-                            <a href="dataset.html#rules">Rules</a>
-                            <a href="dataset.html#instructions">Instructions</a>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <a href="tasks.html">Tasks</a>
-                        <div class="dropdown-content">
-                            <a href="tasks.html#description">Cell Segmentation</a>
-                            <a href="tasks.html#description">Cell Quantification</a>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <a href="evaluate.html">Evaluate</a>
-                        <div class="dropdown-content">
-                            <a href="evaluate.html#leaderboards">Leaderboards</a>
-                            <a href="evaluate.html#statistics">Statistics</a>
-                            <a href="evaluate.html#submit">Submit Results</a>
-                        </div>
-                    </div>
+                    <a href="tasks.html">Task</a>
+                    <a href="evaluate.html">Evaluate</a>
+                    <a href="previous.html">Previous</a>
+                    <a href="organizing.html">Organizing</a>
+                    <a href="contact.html">Contact</a>
                 </nav>
             </div>
         </div>
@@ -194,64 +155,78 @@
     <main class="main-content">
         <!-- News section -->
         <section class="news-section">
-            <h1 class="section-title">News</h1>
+            <!-- <img src="logo_h.png" alt="SegRap Image" style="max-width: 100%; height: auto; margin-bottom: 20px;"> -->
+            <h1 class="section-title">Abstract</h1>
             <ul class="news-list">
-                <li>Registration opens: April 10th (12:00 AM GMT), 2025</li>
-                <li>Release of training data: May 10th (12:00 AM GMT), 2025</li>
-                <li>Release of validation data: July 10th (12:00 AM GMT), 2025</li>
-                <li>Docker and short paper submission opens: Aug. 10th (12:00 AM GMT), 2025</li>
-                <li>Submission deadline: Sept. 10th (12:00 AM GMT), 2025</li>
-                <li>Announcement of final results: Oct. 8th, 2025</li>
+                Radiotherapy is a critical cancer treatment that uses external beam radiation to kill cancer cells.
+                Effective treatment planning, which determines radiation dose distribution for tumor volumes, is
+                essential to maximize
+                the likelihood of a cure while minimizing toxicity. Gross Tumor Volume (GTV) and Clinical Target
+                Volume (CTV) are two
+                key targets in radiotherapy planning. GTV is the visible tumor extent on Computed Tomography (CT)
+                scans, while CTV
+                encompasses GTV and describes the extent of microscopic, unimageable tumor spread. Accurate
+                delineation of GTV and CTV
+                is essential in radiotherapy planning, however, manual slice-by-slice annotation on CT scans is
+                time-consuming and
+                labor-intensive for radiation oncologists. Automating this process can significantly reduce planning
+                time and enhance
+                radiotherapy efficiency. <br>
+                Based on the success of SegRap2023, SegRap2025 aims to address ongoing challenges in GTV
+                segmentation and firstly focus
+                on the Lymph Node (LN) CTV segmentation. It provides two datasets collected from diverse cohorts:
+                one with data from 260
+                NPC patients annotated for GTV, and another with 402 patients annotated for LN CTV. It also provides
+                an unlabeled
+                dataset of CT scans from 500 patients to support model training. Based on the extensive and
+                comprehensive datasets, two
+                sub-tasks will be held in SegRap2025:
+
+                <li>Task01: GTV Segmentation</li>
+                <li>Task02: LN CTV Segmentation</li>
+
+                We believe that these algorithms will have the potential to support clinical manual delineation, enhance
+                research on
+                radiation dose calculation, and improve efficiency of radiotherapy treatment planning.
+
             </ul>
         </section>
-
-        <!-- What is OmniIHC2025 column -->
-        <div class="column">
-            <h2>What is OmniIHC?</h2>
-            <p>The OmniIHC2025 Challenge presents a comprehensive dataset for tumor profiling across multiple immunohistochemistry stained images.</p>
-            <p>Challenge Features:</p>
-            <ul class="features-list">
-                <li><span class="checkmark">✓</span> Over 1 million cell annotations</li>
-                <li><span class="checkmark">✓</span> Data from 350+ patients</li>
-                <li><span class="checkmark">✓</span> 19 diverse IHC staining types</li>
-                <li><span class="checkmark">✓</span> Collected from 5 cohorts</li>
-                <li><span class="checkmark">✓</span> High-quality cell-level annotations</li>
-                <li><span class="checkmark">✓</span> Multiple biomarkers analysis</li>
-                <li><span class="checkmark">✓</span> Cell segmentation task</li>
-                <li><span class="checkmark">✓</span> Cell quantification task</li>
+        <!-- Dates section -->
+        <section class="news-section">
+            <h1 class="section-title">Important Dates</h1>
+            <ul class="news-list">
+                <li>Registration opens: May 1st (12:00 AM GMT), 2025</li>
+                <li>Release of training data: May 10th (12:00 AM GMT), 2025</li>
+                <li>Release of validation data: June 30th (12:00 AM GMT), 2025</li>
+                <li>Docker and short paper submission opens: Aug. 10th (12:00 AM GMT), 2025</li>
+                <li>Submission deadline: Aug. 31st (12:00 AM GMT), 2025</li>
+                <li>Announcement of final results: ~Sep. 25th, 2025</li>
             </ul>
-        </div>
-
-        <!-- Collaborators column -->
-        <div class="column">
-            <h2>Organizers</h2>
-            <ul class="collaborators-list">
-                <li>Xiangde Luo - XJTU, Stanford</li>
-                <li>Wentao Li - XJTU</li>
-                <li>Yuanfeng Ji - Stanford</li>
-                <li>Xiyue Wang - Stanford</li>
-                <li>Sen Yang - Stanford</li>
-                <li>Mengxin Tian - Fudan</li>
-                <li>Cunbao Xu - QFHFMU</li>
-                <li>Yifeng Chen - QFHFMU</li>
-                <li>Long Jin - SCMC</li>
-                <li>Shaoting Zhang - Shanghai AI Lab</li>
-                <li>Zhiqiang Tian - XJTU</li>
-                <li>Dingwen Zhang - HCNSC</li>
-                <li>Zhongyu Li - XJTU</li>
+        </section>
+        <!-- Contact section -->
+        <section class="news-section">
+            <h1 class="section-title">Contact</h1>
+            <ul class="news-list">
+                If there are any questions, please contact us at: <a
+                    href="jia.fu@std.uestc.edu.cn">segrap_organization</a>
             </ul>
-        </div>
+        </section>
+        <!-- Reference section -->
+        <section class="news-section">
+            <h1 class="section-title">References</h1>
+            <ul class="news-list">
+                Please cite the following when using the SegRap dataset in your research:
+                <li><a href="https://doi.org/10.1016/j.media.2024.103447">X. Luo et al. Segrap2023: A benchmark of
+                        organs-at-risk and gross tumor volume segmentation for radiotherapy planning
+                        of nasopharyngeal carcinoma. Medical image analysis 2025, 101: 103447.</a></li>
+                <li><a href="https://doi.org/10.1038/s41597-024-03890-0">X. Luo et al. A multicenter dataset for lymph
+                        node clinical target volume delineation of
+                        nasopharyngeal carcinoma.
+                        Scientific Data 11, 1085 (2024).</a></li>
 
-        <!-- Sponsors column -->
-        <div class="column">
-            <h2>Sponsors</h2>
-            <div class="sponsors-list">
-                <img src="https://via.placeholder.com/200x80/eee/999?text=We need you" class="sponsor-logo">
-                <img src="https://via.placeholder.com/200x60/eee/999?text=We need you" class="sponsor-logo">
-                <img src="https://via.placeholder.com/200x70/eee/999?text=We need you" class="sponsor-logo">
-                <img src="https://via.placeholder.com/200x65/eee/999?text=We need you" class="sponsor-logo">
-            </div>
-        </div>
+            </ul>
+        </section>
     </main>
 </body>
-</html> 
+
+</html>

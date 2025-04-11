@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasks - OmniIHC2025</title>
+    <title>SegRap2025 Challenge</title>
     <link rel="stylesheet" href="shared.css">
     <style>
         .task-section {
@@ -13,8 +14,8 @@
         .task-content {
             background: white;
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
         }
 
         .task-overview {
@@ -33,7 +34,9 @@
         .metric-name {
             font-weight: 500;
             color: var(--text-primary);
+            font-size: 20px;
             margin-bottom: 8px;
+            margin-top: 0px;
         }
 
         .metric-description {
@@ -41,105 +44,213 @@
             font-size: 0.95em;
             line-height: 1.5;
         }
+
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #064b43;
+            font-weight: 500;
+        }
+
+        .news-list li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #00bfa5;
+        }
+
+        .news-list a {
+            color: #00bfa5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .news-list a:hover {
+            color: #00897b;
+        }
+
+        .task-content li {
+            color: #064b43;
+            margin-bottom: 0.3em;
+            line-height: 1.5;
+        }
     </style>
 </head>
+
 <body>
     <div class="site-header">
+        <div class="header-image" style="text-align: center;">
+            <img src="logo_web.png" alt="SegRap Logo" style="width: 800px; height: auto;">
+        </div>
         <div class="header-container">
-            <!-- 左侧 logo -->
-            <div class="logo-section">
-                <img src="logo.png" alt="OmniIHC" class="logo">
-            </div>
-            
-            <!-- 右侧内容 -->
             <div class="content-section">
                 <nav class="nav-links">
                     <a href="index.html">Home</a>
-                    <a href="people.html">People</a>
-                    <div class="nav-item">
-                        <a href="dataset.html">Dataset</a>
-                        <div class="dropdown-content">
-                            <a href="dataset.html#overview">Overview</a>
-                            <a href="dataset.html#download">Download</a>
-                            <a href="dataset.html#evaluation">Evaluation</a>
-                            <a href="dataset.html#rules">Rules</a>
-                            <a href="dataset.html#instructions">Instructions</a>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <a href="tasks.html" class="active">Tasks</a>
-                        <div class="dropdown-content">
-                            <a href="tasks.html#task1">Cell Segmentation</a>
-                            <a href="tasks.html#task2">Cell Quantification</a>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <a href="evaluate.html">Evaluate</a>
-                        <div class="dropdown-content">
-                            <a href="evaluate.html#leaderboards">Leaderboards</a>
-                            <a href="evaluate.html#statistics">Statistics</a>
-                            <a href="evaluate.html#submit">Submit Results</a>
-                        </div>
-                    </div>
+                    <a href="tasks.html" class="active">Tasks</a>
+                    <a href="evaluate.html">Evaluate</a>
+                    <a href="previous.html">Previous</a>
+                    <a href="organizing.html">Organizing</a>
+                    <a href="contact.html">Contact</a>
                 </nav>
             </div>
         </div>
     </div>
+
+
 
     <main class="main-content">
         <!-- Overview Section -->
         <section id="overview" class="task-section">
             <h1 class="section-title">Challenge Tasks</h1>
             <div class="task-content">
-                <p>The OmniIHC2025 Challenge focuses on advancing comprehensive tumor profiling through accurate cell segmentation and quantification in immunohistochemistry (IHC) images. The challenge aims to develop robust computational methods for analyzing multi-stained tissue images across different centers and cancer types.</p>
+                <p>The SegRap2025 Challenge focuses on accurate Gross Tumor Volume (GTV) and Lymph Node Clinical Target
+                    Volume (LN CTV) segmentation in Computed Tomography (CT) images, aiming to support clinical manual
+                    delineation, enhance research on radiation dose calculation, and improve efficiency of
+                    radiotherapy treatment planning.</p>
             </div>
+
+            <!-- Task01 -->
+            <h2 class="section-title">Task01: GTV Segmentation</h2>
+            <div class="task-content">
+                <div class="metric-name">Task Description</div>
+                <p class="metric-description">
+                    Accurately delineate Gross Target Volume of nasopharynx (GTVnx, also named GTVp) and Gross
+                    Target Volume of lymph node (GTVnd) within paired non-contrast computed tomography
+                    (ncCT) and contrast computed tomography (ceCT) images.
+                </p>
+                <br>
+                <div class="metric-name">Dataset Description</div>
+                <p class="metric-description">
+                    SegRap2025 Dataset will consist of CT images collected by Siemens CT scanners with the following
+                    scanning conditions:
+                    bulb voltage, 120 kV; current, 300 mA; scan thickness, 3.0 mm; resolution, 1024 &times; 1024 or 512
+                    &times; 512; injected contrast
+                    agent, iohexol (volume, 60~80 mL; rate, 2 mL/s; without delay). The dataset consists of clinically
+                    required non-contrast
+                    CT images (ncCT) and contrast CT images (ceCT) from patients with nasopharyngeal cancer before
+                    treatment.
+                </p>
+                <br>
+                <p class="metric-description">
+                    The dataset consists of clinically required <strong>non-contrast CT images (ncCT)</strong> and
+                    <strong>contrast CT images (ceCT)</strong> from patients with nasopharyngeal cancer before
+                    treatment.
+                <ul class="news-list">
+
+                    <li>Training data will consist of CT images from <strong>120 patients</strong> with a
+                        corresponding
+                        label map, as well as <strong>500 unlabeled cases</strong>.</li>
+                    <li>Validation data will consist of CT images from <strong>20 patients</strong>.</li>
+                    <li>Testing data will consist of CT images from <strong>60 patients from internal testing
+                            cohort</strong> and
+                        <strong>60 patients from external testing cohort</strong>.
+                    </li>
+                </ul>
+                <br>
+                <p class="metric-description">
+                    <em>Note:</em> All GTVs were annotated individually by oncologists using MIM Software and ITKSNAP,
+                    the
+                    annotation of each organ
+                    was also stored individually. The expected output from your algorithm should be a set of label
+                    maps.
+                </p>
+                <br>
+                <div class="metric-name">Dataset Download</div>
+                <p class="metric-description">
+                    Comming soon!
+                    <!-- The training set with labels and the validation set without labels can be downloaded without any
+                    additional requirements,
+                    <a href="https://drive.google.com/drive/folders/115mzmNlZRIewnSR2QFDwW_-RkNM0LC9D">Google-Drive</a>,
+                    <a href="https://pan.baidu.com/share/init?surl=KYH4j5CQO_qx7wg7GkkR7Q&pwd=2023">BaiduYun</a>, the
+                    unzipped
+                    password is <em>segrap2023@uestc</em>. -->
+
+                </p>
+            </div>
+
+            <!-- Task02 -->
+            <h2 class="section-title">Task02: LN CTV Segmentation</h2>
+            <div class="metric-name">Task Description</div>
+            <!-- <h3 class="task-description">Task Description</h3> -->
+            <p class="metric-description">
+                Accurately delineate 6 LN CTVs: L_Ib, L_II+III+Va, L_IV+Vb+Vc, R_Ib, R_II+III+Va, and R_IV+Vb+Vc
+                within paired ncCT and ceCT images or ncCT/ceCT images.
+            </p>
+            <br>
+            <div class="metric-name">Dataset Description</div>
+            <!-- <h3 class="data-description">Dataset Description</h3> -->
+            <p class="metric-description">
+                SegRap2025 Dataset will consists of CT images from Sichuan Cancer Hospital are collected by a
+                Brilliance CT Big Bore
+                system from Philips Healthcare (Philips Healthcare, Best, the Netherlands), with the following
+                scanning conditions: bulb
+                voltage at 120 kV, current ranging from 275 to 375 mA, slice thickness of 3.0 mm, and full
+                resolution of 512 &times; 512. An
+                injected contrast agent, iohexol, was used during the ceCT examination. Similarly, CT images from
+                Sichuan Provincial
+                People's Hospital, The First Affiliated Hospital of University of Science and Technology of China
+                and Southern Medical
+                University were acquired using a Somatom Definition AS 40 system from Siemens Healthcare (Siemens
+                Healthcare, Forcheim,
+                Germany), with the following conditions: bulb voltage ranging from 120 to140 kV, current ranging
+                from 280 to 380 mA,
+                slice thickness of 3.0 mm, and full resolution of 512 &times; 512. CT images from Daguan Hospital of
+                Chengdu Jinjiang were
+                acquired using a Somatom Definition AS 40 system from Siemens Healthcare (Siemens Healthcare,
+                Forcheim, Germany), with
+                the following conditions: bulb voltage 120 kV, current ranging from 200 to 250 mA, slice thickness
+                of 2.5 mm, and full
+                resolution of 512 &times; 512.
+            </p>
+            <br>
+            <p class="metric-description">
+                The dataset consists of clinically required <strong>non-contrast CT images (ncCT)</strong> and/or
+                <strong>contrast CT images (ceCT)</strong> from patients with nasopharyngeal cancer before
+                treatment.
+            <ul class="news-list">
+
+                <li>Training data will consist of CT images from <strong>262 patients from five cohorts</strong>
+                    (150 paired CT, 32 ncCT and 90 ceCT) with
+                    a corresponding label map, as well as <strong>500 unlabeled cases</strong>.</li>
+                <li>Validation data will consist of CT images from <strong>40 patients from external testing
+                        cohort</strong> (20 paired CT, 10 ncCT and 10
+                    ceCT).</li>
+                <li>Testing data will consist of CT images from <strong>100 patients from external testing
+                        cohort</strong> (40 paired CT, 30 ncCT and 30
+                    ceCT).</li>
+            </ul>
+            <br>
+            <p class="metric-description">
+                <em>Note:</em> All LN CTVs were annotated individually by oncologists using MIM Software and
+                ITKSNAP, the annotation of each organ was
+                also stored individually. The expected output from your algorithm should be a set of label maps.
+            </p>
+            <br>
+            <div class="metric-name">Dataset Download</div>
+            <!-- <h3 class="data-description">Dataset Download</h3> -->
+            <p class="metric-description">
+                Comming soon!
+                <!-- The training set with labels can be downloaded without any additional requirements at:
+                    <a
+                        href="https://figshare.com/articles/dataset/LNCTVSeg-DataSet_zip/26793622?file=48684664">LNCTVSeg</a>,
+                    the unzipped password is <em>lnctvseg@uestc</em>. -->
+
+            </p>
+            <!-- </div> -->
         </section>
 
-        <!-- Task 1 Section -->
-        <section id="task1" class="task-section">
-            <h2 class="section-title">Cell Segmentation</h2>
-            <div class="task-content">
-                <div class="evaluation-metrics">
-                    <div class="metric-item">
-                        <div class="metric-name">Task Description</div>
-                        <div class="metric-description">
-                            Accurately delineate individual cells within multi-stained tissue images, focusing on precise boundary detection and cell instance separation. This task requires participants to develop algorithms that can effectively identify and segment cells across various IHC staining types.
-                        </div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-name">Evaluation Metrics</div>
-                        <div class="metric-description">
-                            <ul>
-                                <li><strong>Panoptic Quality (PQ):</strong> Measures the classification accuracy of pixel points, reflecting the correctness of instance segmentation.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Task 2 Section -->
-        <section id="task2" class="task-section">
-            <h2 class="section-title">Cell Quantification</h2>
-            <div class="task-content">
-                <div class="evaluation-metrics">
-                    <div class="metric-item">
-                        <div class="metric-name">Task Description</div>
-                        <div class="metric-description">
-                            Count cells and measure expression levels of specific biomarkers within the segmented cells, including calculation of Tumor Proportion Score (TPS). This quantification is crucial for understanding tumor heterogeneity and the tumor microenvironment.
-                        </div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-name">Evaluation Metrics</div>
-                        <div class="metric-description">
-                            <ul>
-                                <li><strong>Mean Absolute Error (MAE):</strong> Computes the absolute error between predicted and true cell counts, as well as the Tumor Proportion Score (TPS).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 </body>
-</html> 
+
+</html>

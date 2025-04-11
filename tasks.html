@@ -18,6 +18,12 @@
             margin-bottom: 20px;
         }
 
+        .task-content li {
+            color: #064b43;
+            margin-bottom: 0.3em;
+            line-height: 1.5;
+        }
+
         .task-overview {
             margin-bottom: 40px;
             line-height: 1.6;
@@ -78,12 +84,6 @@
         .news-list a:hover {
             color: #00897b;
         }
-
-        .task-content li {
-            color: #064b43;
-            margin-bottom: 0.3em;
-            line-height: 1.5;
-        }
     </style>
 </head>
 
@@ -118,7 +118,64 @@
                 </p>
             </div>
 
+            <!-- Task01 -->
+            <h2 class="section-title">Task01: GTV Segmentation</h2>
+            <div class="task-content">
+                <div class="metric-name">Task Description</div>
+                <p class="metric-description">
+                    Accurately delineate Gross Target Volume of nasopharynx (GTVnx, also named GTVp) and Gross
+                    Target Volume of lymph node (GTVnd) within paired non-contrast computed tomography
+                    (ncCT) and contrast computed tomography (ceCT) images.
+                </p>
+                <br>
+                <div class="metric-name">Dataset Description</div>
+                <p class="metric-description">
+                    SegRap2025 Dataset will consist of CT images collected by Siemens CT scanners with the following
+                    scanning conditions:
+                    bulb voltage, 120 kV; current, 300 mA; scan thickness, 3.0 mm; resolution, 1024 &times; 1024 or 512
+                    &times; 512; injected contrast
+                    agent, iohexol (volume, 60~80 mL; rate, 2 mL/s; without delay). The dataset consists of clinically
+                    required non-contrast
+                    CT images (ncCT) and contrast CT images (ceCT) from patients with nasopharyngeal cancer before
+                    treatment.
+                </p>
+                <br>
+                <p class="metric-description">
+                    The dataset consists of clinically required <strong>non-contrast CT images (ncCT)</strong> and
+                    <strong>contrast CT images (ceCT)</strong> from patients with nasopharyngeal cancer before
+                    treatment.
+                </p>
+                <ul class="news-list">
+                    <li>Training data will consist of CT images from <strong>120 patients</strong> with a
+                        corresponding
+                        label map, as well as <strong>500 unlabeled cases</strong>.</li>
+                    <li>Validation data will consist of CT images from <strong>20 patients</strong>.</li>
+                    <li>Testing data will consist of CT images from <strong>60 patients from internal testing
+                            cohort</strong> and
+                        <strong>60 patients from external testing cohort</strong>.
+                    </li>
+                </ul>
+                <br>
+                <p class="metric-description">
+                    <em>Note:</em> All GTVs were annotated individually by oncologists using MIM Software and ITKSNAP,
+                    the
+                    annotation of each organ
+                    was also stored individually. The expected output from your algorithm should be a set of label
+                    maps.
+                </p>
+                <br>
+                <div class="metric-name">Dataset Download</div>
+                <p class="metric-description">
+                    Coming soon!
+                    <!-- The training set with labels and the validation set without labels can be downloaded without any
+                            additional requirements,
+                            <a href="https://drive.google.com/drive/folders/115mzmNlZRIewnSR2QFDwW_-RkNM0LC9D">Google-Drive</a>,
+                            <a href="https://pan.baidu.com/share/init?surl=KYH4j5CQO_qx7wg7GkkR7Q&pwd=2023">BaiduYun</a>, the
+                            unzipped
+                            password is <em>segrap2023@uestc</em>. -->
 
+                </p>
+            </div>
 
         </section>
 
